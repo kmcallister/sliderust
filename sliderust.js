@@ -9,6 +9,7 @@ window.addEventListener('load', function () {
             while (true) {
                 sib = node.nextSibling;
                 if (sib === null) {
+                    section.appendChild(node);
                     return sections;
                 }
                 if (sib.nodeName === 'H1') {
