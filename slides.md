@@ -22,6 +22,6 @@ error: mismatched types: expected `&'a html5ever::tokenizer::Tokenizer<html5ever
 
 # Very good then
 
-<div style="text-align: center; margin-top: 80px">
+<div style="text-align: center; margin-top: 120px">
 <img src="http://www.rust-lang.org/logos/rust-logo-256x256-blk.png">
 </div>

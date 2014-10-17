@@ -1,9 +1,13 @@
+body {
+    max-width: 1125px;
+}
+
 h1 {
-    font-size: 60px;
+    font-size: 90px;
 }
 
 body, pre {
-    font-size: 30px;
+    font-size: 45px;
 }
 
 section {
