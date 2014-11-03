@@ -36,3 +36,11 @@ body, h1, h2, h3, h4, h5, h6, nav {
 pre, code {
     font-family: monospace;
 }
+
+ul {
+    list-style: none;
+}
+
+li::before {
+    content: "\2022\A0";
+}

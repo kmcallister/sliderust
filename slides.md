@@ -14,6 +14,16 @@ fn main() {
 }
 ```
 
+# Rust is
+
+a systems programming language that
+
+* runs blazingly fast,
+* prevents almost all crashes, and
+* eliminates data races.
+
+Show me more!
+
 # A true C++ replacement
 
 ```text
