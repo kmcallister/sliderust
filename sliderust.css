@@ -3,11 +3,15 @@ body {
 }
 
 h1 {
-    font-size: 90px;
+    font-size: 70px;
 }
 
-body, pre {
-    font-size: 45px;
+body, h5 {
+    font-size: 35px;
+}
+
+pre {
+    font-size: 30px;
 }
 
 section {
