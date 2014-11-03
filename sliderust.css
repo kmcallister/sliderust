@@ -28,3 +28,11 @@ code.language-text {
     /* Servo doesn't support pre-wrap yet */
     white-space: normal;
 }
+
+body, h1, h2, h3, h4, h5, h6, nav {
+    font-family: sans-serif;
+}
+
+pre, code {
+    font-family: monospace;
+}
