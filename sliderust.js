@@ -27,16 +27,48 @@ window.addEventListener('load', function () {
         document.body.appendChild(x);
     });
 
+    // add a pair of arrows to the bottom right corner of the slides,
+    // ensuring they're outside the slides.
+    var nav = document.createElement('nav');
+    nav.id = 'nav-symbols';
+    var back = document.createElement('span');
+    back.id = 'nav-back';
+    back.classList.add('nav-symbol');
+    back.textContent = '◀';
+    var forward = document.createElement('span');
+    forward.id = 'nav-forward';
+    forward.classList.add('nav-symbol');
+    forward.textContent = '▶';
+
+    nav.appendChild(back);
+    nav.appendChild(forward);
+    document.body.appendChild(nav);
+
     var sections = document.getElementsByTagName('section');
     var current = 0;
+    function adjustClass(elem, should_add, klass) {
+        if (should_add)
+            elem.classList.add(klass);
+        else
+            elem.classList.remove(klass);
+    }
     function update() {
         [].forEach.call(sections, function (x, i) {
             x.className = (i === 0) ? 'title-slide' : '';
         });
-        if (current < 0)
+
+        var can_go_forward = true, can_go_back = true;
+
+        if (current <= 0) {
             current = 0;
-        if (current >= sections.length)
+            can_go_back = false;
+        }
+        else if (current >= sections.length - 1) {
             current = sections.length - 1;
+            can_go_forward = false;
+        }
+        adjustClass(forward, !can_go_forward, 'disabled');
+        adjustClass(back,    !can_go_back,    'disabled');
         sections[current].className += ' current';
     }
 
@@ -47,6 +79,14 @@ window.addEventListener('load', function () {
             case 39: current++; break;
             case 37: current--; break;
         }
+        update();
+    });
+    forward.addEventListener('click', function(ev) {
+        current++;
+        update();
+    });
+    back.addEventListener('click', function(ev) {
+        current--;
         update();
     });
 });

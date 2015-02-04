@@ -48,3 +48,22 @@ ul {
 li::before {
     content: "\2022\A0";
 }
+
+#nav-symbols {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 40px;
+
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+}
+.nav-symbol {
+    padding: 10px;
+    cursor: pointer;
+}
+.disabled {
+    color: lightgray;
+}
