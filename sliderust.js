@@ -89,4 +89,28 @@ window.addEventListener('load', function () {
         current--;
         update();
     });
+
+    // Touch listeners, to change page if a user with a touch devices
+    // swipes left or right.
+    var start_x, start_y;
+    document.body.addEventListener('touchstart', function(ev) {
+        ev.preventDefault();
+        if (ev.touches.length > 1) return;
+        start_x = ev.touches[0].clientX;
+        start_y = ev.touches[0].clientY;
+    });
+    document.body.addEventListener('touchmove', function(ev) { ev.preventDefault(); });
+    document.body.addEventListener('touchend', function(ev) {
+        if (ev.touches.length > 0) return;
+
+        var dx = ev.changedTouches[0].clientX - start_x;
+        var dy = ev.changedTouches[0].clientY - start_y;
+
+        // if the touch is at least 40% of the page wide, and doesn't
+        // move vertically too much, it counts as a swipe.
+        if (Math.abs(dx) > 0.4 * window.innerWidth && Math.abs(dy) < 0.2 * window.innerHeight) {
+            current += -Math.sign(dx);
+            update();
+        }
+    });
 });
