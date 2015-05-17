@@ -6,4 +6,4 @@ Check out the [live demo!](http://kmcallister.github.io/sliderust/)  Use the lef
 
 `slides.md` contains the example slides in Markdown format.  The script `build.sh` will convert them to HTML using `rustdoc`.
 
-‡ on [this pull request branch](https://github.com/servo/servo/pull/3585)
+‡ In theory. Servo is a work-in-progress and may do anything it likes up to and including eating your laundry.
